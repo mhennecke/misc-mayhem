@@ -1,0 +1,26 @@
+[ req ]
+default_bits = 2048
+default_md = sha256
+prompt = no
+distinguished_name = subject
+x509_extensions = user_crt
+req_extensions = v3_req
+
+[ subject ]
+CN = some-common-name
+
+[ user_crt ]
+subjectKeyIdentifier    = hash
+
+
+[ v3_req ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment, dataEncipherment, keyCertSign
+extendedKeyUsage = critical, serverAuth, clientAuth
+subjectAltName = @alternate_names
+
+
+
+[alternate_names]
+DNS.1 = stage.lud.manufacturing.de.abb.com
+URI.1 = urn:opcua:system:stage.lud.manufacturing.de.abb.com
