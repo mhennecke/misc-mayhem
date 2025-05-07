@@ -1,2 +1,11 @@
 cert.crt
 private.key
+.DS_Store
+__pycache__
+.pytest_cache/
+*.egg-info/
+.eggs/
+*.pyc
+.vscode
+venv/*
+build/

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apple-reminder-to-markdown"
+version = "0.1.0"
+description = "A script to transform Apple Reminders JSON files into Markdown tasks for Obsidian."
+authors = [
+    { name = "Marius Hennecke", email = "marius.hennecke@de.abb.com" }
+]
+dependencies = [
+    "typer>=0.9.0"
+]
+
+
+[project.scripts]
+apple-reminders-to-markdown = "apple_reminders_to_markdown.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
